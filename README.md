@@ -27,6 +27,7 @@ A simple Inventory Management System built using PHP and MySQL with basic CRUD f
 ---
 
 ## 📁 Project Structure
+```
 inventory-system/
 │
 ├── config/
@@ -59,8 +60,7 @@ inventory-system/
 ├── delete_item.php
 │
 └── README.md
-
----
+```
 
 ## ⚙️ Setup Instructions
 

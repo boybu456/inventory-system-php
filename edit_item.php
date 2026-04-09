@@ -1,27 +1,15 @@
 <?php
-include "config/database.php";
-include "models/Item.php";
+include "controllers/ItemController.php";
 
-$itemModel = new Item($conn);
+$controller = new ItemController();
 
-// GET ID FROM URL
 $id = $_GET['id'];
+$item = $controller->show($id);
 
-// FETCH ITEM DATA
-$result = $itemModel->getById($id);
-$item = $result->fetch_assoc();
-
-// UPDATE ITEM
 if (isset($_POST['update'])) {
-    $name = $_POST['name'];
-    $quantity = $_POST['quantity'];
-    $price = $_POST['price'];
-
-    if ($itemModel->update($id, $name, $quantity, $price)) {
-        header("Location: index.php");
+    if ($controller->update($id, $_POST)) {
+        header("Location: index.php?message=Item updated successfully");
         exit();
-    } else {
-        echo "Error updating item";
     }
 }
 ?>

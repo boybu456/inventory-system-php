@@ -1,16 +1,12 @@
 <?php
-include "config/database.php";
-include "models/Item.php";
+include "controllers/ItemController.php";
 
-$itemModel = new Item($conn);
+$controller = new ItemController();
 
 if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $quantity = $_POST['quantity'];
-    $price = $_POST['price'];
-
-    if ($itemModel->create($name, $quantity, $price)) {
-        echo "Item added successfully!";
+    if ($controller->store($_POST)) {
+        header("Location: index.php?message=Item added successfully");
+        exit();
     } else {
         echo "Error adding item";
     }

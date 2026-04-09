@@ -1,9 +1,11 @@
 <?php
-include "models/Item.php";
+include "controllers/ItemController.php";
 
-$itemModel = new Item($conn);
+$controller = new ItemController();
 
-$itemModel->delete($id);
+$id = $_GET['id'];
+$controller->destroy($id);
 
-header("Location: index.php");
+header("Location: index.php?message=Item deleted successfully");
 exit();
+?>

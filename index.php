@@ -1,12 +1,19 @@
 <?php
-include "config/database.php";
-include "models/Item.php";
+include "controllers/ItemController.php";
 
-$itemModel = new Item($conn);
-$result = $itemModel->getAll();
+$controller = new ItemController();
+$result = $controller->index();
+
 ?>
 
+
 <h2>Inventory List</h2>
+
+<?php if (isset($_GET['message'])): ?>
+    <p style="color: green;">
+        <?= $_GET['message'] ?>
+    </p>
+<?php endif; ?>
 
 <a href="add_item.php">Add New Item</a>
 

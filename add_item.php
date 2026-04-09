@@ -3,18 +3,22 @@ include "controllers/ItemController.php";
 
 $controller = new ItemController();
 
-if (isset($_POST['submit'])) {
-    if ($controller->store($_POST)) {
-        header("Location: index.php?message=Item added successfully");
-        exit();
-    } else {
-        echo "Error adding item";
-    }
+$result = $controller->store($_POST);
+
+if ($result === true) {
+    header("Location: index.php?message=Item added successfully");
+    exit();
+} else {
+    $error = $result;
 }
+
+
 ?>
 
 <h2>Add Item</h2>
-
+<?php if (isset($error)): ?>
+    <p style="color: red;"><?= $error ?></p>
+<?php endif; ?>
 <form method="POST">
     <input type="text" name="name" placeholder="Item Name" required>
     <br><br>

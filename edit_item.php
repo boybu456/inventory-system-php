@@ -6,11 +6,13 @@ $controller = new ItemController();
 $id = $_GET['id'];
 $item = $controller->show($id);
 
-if (isset($_POST['update'])) {
-    if ($controller->update($id, $_POST)) {
-        header("Location: index.php?message=Item updated successfully");
-        exit();
-    }
+$result = $controller->update($id, $_POST);
+
+if ($result === true) {
+    header("Location: index.php?message=Item updated successfully");
+    exit();
+} else {
+    $error = $result;
 }
 ?>
 

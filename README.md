@@ -74,9 +74,9 @@ C:/xampp/htdocs/inventory-system
 4. Create database:
 inventory_db
 
-5. Import SQL file (if available)
+5. Import SQL file
 
-6. Open in browser:
+6. Open in browser
 
 
 ---

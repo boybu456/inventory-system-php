@@ -54,7 +54,7 @@ class ItemController {
     if ($data['price'] < 0) {
         return "Price cannot be negative";
     }
-    
+
     return $this->itemModel->update(
         $id,
         $data['name'],

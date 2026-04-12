@@ -39,6 +39,7 @@ if ($result === true) {
     <br><br>
 
     <button type="submit" name="update">Update Item</button>
+    <button type="button" onclick="window.location.href='http://localhost/inventory-system/'"> Go Back </button>
 </form>
 
 </body>

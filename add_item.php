@@ -15,8 +15,6 @@ if ($result === true) {
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +46,6 @@ if ($result === true) {
     <button type="submit" name="submit">Add Item</button>
     <button type="button" onclick="window.location.href='http://localhost/inventory-system/'"> Go Back </button>
 </form>
-
+    
 </body>
 </html>

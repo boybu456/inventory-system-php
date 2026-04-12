@@ -16,11 +16,20 @@ class TransactionController {
     }
 
     public function store($data){
-        return $this->transactionModel->create(
-            $data['item_name'],
-            $data['type'],
-            $data['quantity']
-        );
+        
+        $item_id = $data['item_id'];
+        $type = $data['type'];
+        $quantity = $data['quantity'];
+        
+        if($quantity <= 0){
+            return false;
+        }
+        if($type != 'in' && $type != 'out'){
+            return false;
+        }
+
+        return $this->transactionModel->create($item_id, $type, $quantity);
+
     }
 
 }

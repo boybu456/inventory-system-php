@@ -34,7 +34,7 @@ table th {
     color: white;
 }
 
-button {
+button, a.button {
     padding: 8px 12px;
     border: none;
     background: #28a745;

@@ -6,20 +6,30 @@ $result = $controller->index();
 
 ?>
 
-
-<h2>Inventory List</h2>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+     
 <?php if (isset($_GET['message'])): ?>
-    <p style="color: green;">
+    <p style="color: green; background: #e6ffed; padding: 10px;">
         <?= $_GET['message'] ?>
     </p>
 <?php endif; ?>
 
+    <h2>Inventory List</h2>
+        
 <a href="add_item.php">Add New Item</a>
 
 <br><br>
 
 <table border="1" cellpadding="10">
+
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -42,3 +52,6 @@ $result = $controller->index();
     <?php endwhile; ?>
 
 </table>
+
+</body>
+</html>

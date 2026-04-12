@@ -15,10 +15,26 @@ if ($result === true) {
 
 ?>
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
 <h2>Add Item</h2>
+
 <?php if (isset($error)): ?>
-    <p style="color: red;"><?= $error ?></p>
+    <p style="color: red; background: #ffe6e6; padding: 10px;">
+        <?= $error ?>
+    </p>
 <?php endif; ?>
+
 <form method="POST">
     <input type="text" name="name" placeholder="Item Name" required>
     <br><br>
@@ -31,3 +47,6 @@ if ($result === true) {
 
     <button type="submit" name="submit">Add Item</button>
 </form>
+
+</body>
+</html>

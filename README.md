@@ -1,124 +1,143 @@
 # Inventory System (PHP + MySQL)
 
-A simple Inventory Management System built using PHP and MySQL with basic CRUD functionality. This project is part of my portfolio to demonstrate backend development skills using core PHP.
+A backend-focused Inventory Management System built using PHP and MySQL.  
+This project demonstrates CRUD operations, transaction processing, and stock management using a custom MVC-like structure.
 
 ---
 
 ## 🚀 Features
 
-- Add new items to inventory
-- Edit existing items
-- Delete items
-- View list of items
-- Track transactions (if applicable in current build)
-- Simple and clean UI using HTML/CSS
-- MySQL database integration
+- Add, edit, delete items (CRUD)
+- View inventory list
+- Record stock transactions (IN / OUT)
+- Automatic stock updates based on transactions
+- Prevent negative stock values
+- Transaction history tracking
+- Input validation for data integrity
+- Basic MVC-like architecture (Models, Controllers, Views separation)
 
 ---
 
 ## 🧱 Tech Stack
 
-- PHP (Core PHP, no framework)
+- PHP (Core PHP, OOP)
 - MySQL
 - HTML / CSS
 - XAMPP (Local development server)
-- Git & GitHub for version control
+- Git & GitHub (Version control)
+
+---
+
+## ⚙️ How It Works (Core Logic)
+
+- Items are stored in the `items` table
+- Transactions are stored in the `transactions` table
+- When a transaction is created:
+  - The system inserts a record into the transactions table
+  - It retrieves the current item quantity
+  - It updates the item stock based on transaction type:
+    - IN → adds stock
+    - OUT → subtracts stock
+  - Validation prevents negative stock values
 
 ---
 
 ## 📁 Project Structure
-```
 inventory-system/
 │
 ├── config/
-│   └── database.php
+│ └── database.php
 │
 ├── models/
-│   ├── Item.php
-│   └── Transaction.php
+│ ├── Item.php
+│ └── Transaction.php
 │
 ├── controllers/
-│   ├── ItemController.php
-│   └── TransactionController.php
+│ ├── ItemController.php
+│ └── TransactionController.php
 │
 ├── views/
-│   ├── items/
-│   │   ├── list.php
-│   │   ├── add.php
-│   │   └── edit.php
-│   │
-│   └── transactions/
-│       └── history.php
+│ ├── items/
+│ │ ├── list.php
+│ │ ├── add.php
+│ │ └── edit.php
+│ │
+│ └── transactions/
+│ └── history.php
 │
 ├── assets/
-│   └── css/
-│       └── style.css
+│ └── css/
+│ └── style.css
 │
 ├── index.php
 ├── add_item.php
 ├── edit_item.php
 ├── delete_item.php
+├── add_transaction.php
+├── transactions.php
 │
 └── README.md
-```
+
+
+---
+
+## 🗄️ Database Setup
+
+- Database name: `inventory_db`
+- Import the provided SQL file into phpMyAdmin
+
+Tables:
+- `items`
+- `transactions`
+
+---
 
 ## ⚙️ Setup Instructions
 
 1. Clone the repository:
 https://github.com/boybu456/inventory-system-php
-2. Move project to XAMPP `htdocs`:
+
+2. Move project to XAMPP:
 C:/xampp/htdocs/inventory-system
 
 3. Start Apache and MySQL in XAMPP
 
-4. Create database:
+4. Open phpMyAdmin and create database:
 inventory_db
 
 5. Import SQL file
 
-6. Open in browser
-
-
----
-
-## 🗄️ Database Configuration
-
-Update database credentials in:
-config/database.php
-
-Default setup:
-- Host: localhost
-- Username: root
-- Password: (empty)
-- Database: inventory_db
+6. Run in browser:
+http://localhost/inventory-system/
 
 ---
 
-## 🎯 Learning Goals
+## 🎯 Key Learning Outcomes
 
-- Understand MVC-like structure in PHP
-- Practice CRUD operations
-- Learn database integration using PDO/MySQLi
-- Improve Git & GitHub workflow
-- Build portfolio-ready backend project
+- Built backend logic using PHP OOP
+- Implemented CRUD operations with MySQL
+- Designed transaction-based inventory system
+- Applied input validation and basic security (prepared statements)
+- Practiced MVC-like separation of logic
+- Managed project using Git & GitHub
 
 ---
 
 ## 📌 Future Improvements
 
-- Full MVC refactor
-- User authentication (login system)
-- Role-based access (admin/user)
-- Better UI using Bootstrap or Tailwind
-- API version of the system
-- Laravel migration
+- Full MVC refactor (proper architecture)
+- User authentication system (login/logout)
+- Role-based access control (admin/user)
+- REST API version of the system
+- UI upgrade using Bootstrap or Tailwind
+- Migration to Laravel framework
 
 ---
 
 ## 👨‍💻 Author
 
 Carl Joshua Opinaldo  
-Aspiring Backend Developer (PHP / JavaScript)
+Aspiring Backend Developer (PHP / Backend Systems)
 
 ---
 

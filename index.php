@@ -25,7 +25,7 @@ $result = $controller->index();
     <h2>Inventory List</h2>
         
 <a href="add_item.php">Add New Item</a>
-
+<button type="button" onclick="window.location.href='http://localhost/inventory-system/transactions.php'"> Transaction History </button>
 <br><br>
 
 <table border="1" cellpadding="10">

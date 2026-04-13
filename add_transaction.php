@@ -67,6 +67,7 @@ if (isset($_POST['submit'])) {
     <br><br>
 
     <button type="submit" name="submit">Submit</button>
+    <button type="button" onclick="window.location.href='http://localhost/inventory-system/'"> Go Back </button>
 
 </form>
 
